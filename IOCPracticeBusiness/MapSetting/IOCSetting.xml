@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <configSections>
+    <section name="unity" type="Microsoft.Practices.Unity.Configuration.UnityConfigurationSection, Microsoft.Practices.Unity.Configuration" />
+  </configSections>
+  <unity>
+    <sectionExtension type="Microsoft.Practices.Unity.InterceptionExtension.Configuration.InterceptionConfigurationExtension, Microsoft.Practices.Unity.Interception.Configuration" />
+    <containers>
+      <container name="DemonIOCPracticeDAOContainer">
+        <register type="System.Data.Entity.DbContext, EntityFramework" mapTo="IOCPracticeDAL.IOCPracticeService.IOCPracticeDB, IOCPracticeDAL" />
+        <register type="IOCPracticeIDAL.IBasicDAO`1,IOCPracticeIDAL" mapTo="IOCPracticeDAL.IOCPracticeDAO.BasicDAO`1, IOCPracticeDAL" />
+      </container>
+      <container name="testContainerAOP">
+        <extension type="Interception" />
+        <register type="Ruanmou.Project.IPhone,Ruanmou.Project" mapTo="Ruanmou.Project.ApplePhone, Ruanmou.Project">
+          <interceptor type="InterfaceInterceptor" />
+          <interceptionBehavior type="Ruanmou.Project.LogBehavior, Ruanmou.Project" />
+          <constructor />
+        </register>
+        <register type="Ruanmou.Project.IMicrophone, Ruanmou.Project" mapTo="Ruanmou.Project.Microphone, Ruanmou.Project" />
+        <register type="Ruanmou.Project.IHeadset, Ruanmou.Project" mapTo="Ruanmou.Project.Headset, Ruanmou.Project" />
+        <register type="Ruanmou.Project.IPower, Ruanmou.Project" mapTo="Ruanmou.Project.Power, Ruanmou.Project" />
+        <register type="Ruanmou.Project.IPhone,Ruanmou.Project" mapTo="Ruanmou.Project.AndroidPhone, Ruanmou.Project" name="android" />
+        <register type="Ruanmou.Project.IPhone,Ruanmou.Project" mapTo="Ruanmou.Project.ApplePhone, Ruanmou.Project" name="apple" />
+      </container>
+    </containers>
+  </unity>
+</configuration>
