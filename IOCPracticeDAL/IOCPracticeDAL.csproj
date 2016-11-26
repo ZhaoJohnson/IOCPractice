@@ -74,6 +74,10 @@
       <Project>{01D4CFCA-0763-4CF4-A131-346BBE9913BC}</Project>
       <Name>IOCPracticeIDAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IOCPracticeModel\IOCPracticeModel.csproj">
+      <Project>{CAB75C90-E2FC-4EC2-B88C-00B33EF09D71}</Project>
+      <Name>IOCPracticeModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using IOCPracticeDAL.Entity;
-using IOCPracticeIDAL;
 using IOCPracticeModel;
 
-namespace IOCPracticeDAL.IOCPracticeDAO
+namespace IOCPracticeIDAL
     {
-    public class UserDAO : BasicDAO<UserModel>,IUserDAO
+    public interface IUserDAO : IBasicDAO<UserModel>
         {
         }
     }

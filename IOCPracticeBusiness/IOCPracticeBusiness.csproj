@@ -74,6 +74,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MapSetting\IOCSetting - 复制.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="MapSetting\IOCSetting.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

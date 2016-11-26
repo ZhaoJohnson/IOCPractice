@@ -1,0 +1,13 @@
+﻿<configuration>
+  <configSections>
+    <section name="unity" type="Microsoft.Practices.Unity.Configuration.UnityConfigurationSection,Microsoft.Practices.Unity.Configuration" />
+  </configSections>
+  <unity>
+    <containers>
+      <container name="DemonIOCPracticeDAOContainer">
+        <register type="System.Data.Entity.DbContext, EntityFramework" mapTo="IOCPracticeDAL.IOCPracticeService.IOCPracticeDB, IOCPracticeDAL" />
+        <register type="IOCPracticeIDAL.IBasicDAO`1,IOCPracticeIDAL" mapTo="IOCPracticeDAL.IOCPracticeDAO.BasicDAO`1, IOCPracticeDAL" />
+      </container>
+    </containers>
+  </unity>
+</configuration>
