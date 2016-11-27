@@ -95,6 +95,10 @@
       <Project>{e116c263-ffc5-4838-a0f8-0344ff23967a}</Project>
       <Name>IOCPracticeDAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IOCPracticeModel\IOCPracticeModel.csproj">
+      <Project>{CAB75C90-E2FC-4EC2-B88C-00B33EF09D71}</Project>
+      <Name>IOCPracticeModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

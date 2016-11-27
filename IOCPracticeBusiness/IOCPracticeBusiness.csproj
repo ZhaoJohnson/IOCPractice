@@ -82,14 +82,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IOCPracticeIBLL\IOCPracticeIBLL.csproj">
-      <Project>{64ff847e-5dec-422c-96db-6ab8824706c5}</Project>
-      <Name>IOCPracticeIBLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IOCPracticeIDAL\IOCPracticeIDAL.csproj">
-      <Project>{01d4cfca-0763-4cf4-a131-346bbe9913bc}</Project>
-      <Name>IOCPracticeIDAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\IOCPracticeModel\IOCPracticeModel.csproj">
       <Project>{cab75c90-e2fc-4ec2-b88c-00b33ef09d71}</Project>
       <Name>IOCPracticeModel</Name>

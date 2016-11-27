@@ -52,6 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RetrunDataEngine\BaseDataEngine.cs" />
+    <Compile Include="RetrunDataEngine\UserDataEngine.cs" />
     <Compile Include="DbDAO.cs" />
     <Compile Include="Entity\Company.cs" />
     <Compile Include="Entity\IOCPracticeDB.cs" />
@@ -70,9 +72,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IOCPracticeIDAL\IOCPracticeIDAL.csproj">
-      <Project>{01D4CFCA-0763-4CF4-A131-346BBE9913BC}</Project>
-      <Name>IOCPracticeIDAL</Name>
+    <ProjectReference Include="..\IOCPracticeCommon\IOCPracticeCommon.csproj">
+      <Project>{76d1bb35-90eb-462f-82cd-3d1daf46c298}</Project>
+      <Name>IOCPracticeCommon</Name>
     </ProjectReference>
     <ProjectReference Include="..\IOCPracticeModel\IOCPracticeModel.csproj">
       <Project>{CAB75C90-E2FC-4EC2-B88C-00B33EF09D71}</Project>
