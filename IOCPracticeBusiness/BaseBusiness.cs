@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
+using IOCPracticeInterface.IDAL;
 using IOCPracticeModel;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
@@ -25,7 +26,8 @@ namespace IOCPracticeBusiness
 
             IUnityContainer container = new UnityContainer ();
             section.Configure (container, "DemonIOCPracticeDAOContainer");
-
+            IUserDataEngine userEngine = container.Resolve<IUserDataEngine> ();
+            var ww = userEngine.QuerySingle (2);
             //IBasicDAO<UserModel> iBaseServie = container.Resolve<IBasicDAO<UserModel>> ();
             //var s = iBaseServie.SkipTable (1, 1);
         }

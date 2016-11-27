@@ -82,6 +82,14 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\IOCPracticeDAL\IOCPracticeDAL.csproj">
+      <Project>{E116C263-FFC5-4838-A0F8-0344FF23967A}</Project>
+      <Name>IOCPracticeDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IOCPracticeInterface\IOCPracticeInterface.csproj">
+      <Project>{02ffc3a4-c873-4ed0-9f20-819c27ed4c76}</Project>
+      <Name>IOCPracticeInterface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IOCPracticeModel\IOCPracticeModel.csproj">
       <Project>{cab75c90-e2fc-4ec2-b88c-00b33ef09d71}</Project>
       <Name>IOCPracticeModel</Name>

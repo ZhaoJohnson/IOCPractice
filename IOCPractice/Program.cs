@@ -15,8 +15,8 @@ namespace IOCPractice
         {
             try
             {
-                UserDataEngine uEngine = new UserDataEngine ();
-                var re = uEngine.OffSetData (10, 1);
+                //UserDataEngine uEngine = new UserDataEngine ();
+                //var re = uEngine.OffSetData (10, 1);
                 //  IBasicDAO<UserModel> udao = new UserDAO ();
                 //var e = udao.QuerySingle (1);
                 BaseBusiness bb = new BaseBusiness ();

@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using IOCPracticeCommon.ObjectExtensions;
 using IOCPracticeDAL.Entity;
 using IOCPracticeDAL.IOCPracticeDAO;
+using IOCPracticeInterface.IDAL;
 using IOCPracticeModel;
 
 namespace IOCPracticeDAL.RetrunDataEngine
 {
-    public class UserDataEngine
+    public class UserDataEngine : IUserDataEngine
     {
         protected UserDAO UserDAO => new UserDAO ();
 
