@@ -26,10 +26,10 @@ namespace IOCPracticeBusiness
 
             IUnityContainer container = new UnityContainer ();
             section.Configure (container, "DemonIOCPracticeDAOContainer");
-            IUserDataEngine userEngine = container.Resolve<IUserDataEngine> ();
+            IUserDataEngine<UserModel> userEngine = container.Resolve<IUserDataEngine<UserModel>> ();
             var ww = userEngine.QuerySingle (2);
-            IOCService iservice=new IOCService();
-            iservice.Resolve<IUserDataEngine>();
+            IOCService iservice = new IOCService ();
+            //iservice.Resolve<IUserDataEngine>();
             //IBasicDAO<UserModel> iBaseServie = container.Resolve<IBasicDAO<UserModel>> ();
             //var s = iBaseServie.SkipTable (1, 1);
         }

@@ -6,7 +6,7 @@
     <containers>
       <container name="DemonIOCPracticeDAOContainer">
         <register type="System.Data.Entity.DbContext, EntityFramework" mapTo="IOCPracticeDAL.Entity.IOCPracticeDB, IOCPracticeDAL" />
-        <register type="IOCPracticeInterface.IDAL.IUserDataEngine,IOCPracticeInterface" mapTo="IOCPracticeDAL.RetrunDataEngine.UserDataEngine, IOCPracticeDAL" />
+        <register type="IOCPracticeInterface.IDAL.IUserDataEngine`1,IOCPracticeInterface" mapTo="IOCPracticeDAL.RetrunDataEngine.UserDataEngine, IOCPracticeDAL" />
       </container>
     </containers>
   </unity>

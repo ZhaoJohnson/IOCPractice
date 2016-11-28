@@ -20,9 +20,9 @@ namespace IOCPractice
         {
             try
             {
-                IDataEngine<UserModel> cd = new UserDataEngine ();
+                //IDataEngine<UserModel> cd = new UserDataEngine ();
 
-                var ee = cd.OffSetData (1, 1);
+                //var ee = cd.OffSetData (1, 1);
                 // BaseDataEngine<CompanyModel> engine=new CompanyDataEngine<CompanyModel>();
                 // engine.Add<CompanyModel>(new CompanyModel());
                 //UserDataEngine uEngine = new UserDataEngine ();
