@@ -7,10 +7,8 @@ using IOCPracticeModel;
 
 namespace IOCPracticeInterface.IDAL
 {
-    public interface IUserDataEngine
+    public interface IUserDataEngine<T> : IDataEngine<T>
+        where T : UserModel
     {
-        UserModel Add ( UserModel model );
-
-        UserModel QuerySingle ( object objectKey );
     }
 }

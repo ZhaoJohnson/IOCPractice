@@ -6,20 +6,13 @@ using System.Threading.Tasks;
 using IOCPracticeCommon.ObjectExtensions;
 using IOCPracticeDAL.Entity;
 using IOCPracticeDAL.IOCPracticeDAO;
+using IOCPracticeInterface;
 using IOCPracticeModel;
 
 namespace IOCPracticeDAL.RetrunDataEngine
 {
-    public class CompanyDataEngine : BaseDataEngine
-    {
-        public CompanyDataEngine()
-        {
-            BaseDao=new CompanyDAO<Company>();
-        }
+    public class CompanyDataEngine : BasicDataEngine<CompanyModel, Company>, ICompanyDataEngine<CompanyModel>
 
-        public override T Add<T>(T model) 
-        {
-            return base.Add(model);
-        }
+    {
     }
 }

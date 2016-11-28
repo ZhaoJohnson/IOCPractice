@@ -95,6 +95,10 @@
       <Project>{e116c263-ffc5-4838-a0f8-0344ff23967a}</Project>
       <Name>IOCPracticeDAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IOCPracticeInterface\IOCPracticeInterface.csproj">
+      <Project>{02FFC3A4-C873-4ED0-9F20-819C27ED4C76}</Project>
+      <Name>IOCPracticeInterface</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IOCPracticeModel\IOCPracticeModel.csproj">
       <Project>{CAB75C90-E2FC-4EC2-B88C-00B33EF09D71}</Project>
       <Name>IOCPracticeModel</Name>

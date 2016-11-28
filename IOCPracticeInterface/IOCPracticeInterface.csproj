@@ -40,8 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IDAL\ICompanyDataEngine.cs" />
+    <Compile Include="IDAL\IDataEngine.cs" />
+    <Compile Include="IDAL\IMenuDataEngine.cs" />
     <Compile Include="IDAL\IRetrunDataEngine.cs" />
     <Compile Include="IDAL\IUserDataEngine.cs" />
+    <Compile Include="IDAL\IUserMenuMappingDataEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

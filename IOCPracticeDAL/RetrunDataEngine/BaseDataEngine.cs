@@ -16,51 +16,48 @@ namespace IOCPracticeDAL.RetrunDataEngine
 {
     public class BaseDataEngine : IRetrunDataEngine
     {
-
-        protected Dictionary<string, IDAO> KeyDaos = new Dictionary<string, IDAO>();
+        protected Dictionary<string, IDAO> KeyDaos = new Dictionary<string, IDAO> ();
         protected IDAO BaseDao;
 
-        protected BaseDataEngine()
+        protected BaseDataEngine ()
         {
-
-            KeyDaos.Add(typeof(UserModel).Name, new UserDAO<User>());
-            KeyDaos.Add(typeof(CompanyModel).Name, new CompanyDAO<Company>());
-            KeyDaos.Add(typeof(MenuModel).Name, new MenuDAO<Menu>());
-            KeyDaos.Add(typeof(UserMenuMappingModel).Name, new UserMenuMappingDAO<UserMenuMapping>());
+            KeyDaos.Add (typeof (UserModel).Name, new UserDAO<User> ());
+            KeyDaos.Add (typeof (CompanyModel).Name, new CompanyDAO<Company> ());
+            KeyDaos.Add (typeof (MenuModel).Name, new MenuDAO<Menu> ());
+            KeyDaos.Add (typeof (UserMenuMappingModel).Name, new UserMenuMappingDAO<UserMenuMapping> ());
         }
 
-        public virtual T Add<T>(T model) where T:class,new()
+        public virtual T Add<T> ( T model ) where T : class, new()
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException ();
         }
 
-
-        public virtual T QuerySingle<T>(object objectKey) where T : class, new()
+        public virtual T QuerySingle<T> ( object objectKey ) where T : class, new()
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException ();
         }
 
-        public virtual T AddorUpdate<T>(T model) where T : class, new()
+        public virtual T AddorUpdate<T> ( T model ) where T : class, new()
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException ();
         }
 
-        public virtual IList<T> SkipTable<T>(int pageSize, int pageIndex) where T : class, new()
+        public virtual IList<T> SkipTable<T> ( int pageSize, int pageIndex ) where T : class, new()
         {
             return null;
         }
 
-        public int GetCount()
+        public int GetCount ()
         {
             return 0;
         }
 
-        public virtual IEnumerable<T> SkipData<T>(int pageSize, int pageIndex) where T : class, new()
+        public virtual IEnumerable<T> SkipData<T> ( int pageSize, int pageIndex ) where T : class, new()
         {
             return null;
         }
 
-        public virtual IEnumerable<T> OffSetData<T>(int pageSize, int pageIndex) where T : class, new()
+        public virtual IEnumerable<T> OffSetData<T> ( int pageSize, int pageIndex ) where T : class, new()
         {
             return null;
         }
