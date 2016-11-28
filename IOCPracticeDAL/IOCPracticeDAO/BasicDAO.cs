@@ -8,27 +8,27 @@ using IOCPracticeDAL.Entity;
 
 namespace IOCPracticeDAL.IOCPracticeDAO
 {
-    public abstract class BasicDAO<T> : DbDAO<IOCPracticeDB>
-        where T : class
+    public  class BasicDAO : DbDAO<IOCPracticeDB>, IDAO
+      
     {
         protected IOCPracticeDB dbContext = new IOCPracticeDB ();
 
-        public virtual T Add ( T t )
+        public virtual T Add<T>(T t) where T : class
         {
             return ExecEntityJdData (ef => ef.Set<T> ().Add (t), true);
         }
 
-        public virtual T QuerySingle ( object objectKey )
+        public virtual T QuerySingle<T>(object objectKey) where T : class
         {
             return ExecEntityJdData (ef => ef.Set<T> ().Find (objectKey));
         }
 
-        public virtual T AddorUpdate ( T T )
+        public virtual T AddorUpdate<T>(T t) where T : class
         {
             return ExecEntityJdData (ef =>
              {
-                 ef.Set<T> ().AddOrUpdate (T);
-                 return ef.Set<T> ().Find (T);
+                 ef.Set<T> ().AddOrUpdate (t);
+                 return ef.Set<T> ().Find (t);
              }, true);
         }
 
@@ -38,7 +38,7 @@ namespace IOCPracticeDAL.IOCPracticeDAO
         /// <param name="pageSize"></param>
         /// <param name="pageIndex"></param>
         /// <returns></returns>
-        public virtual IList<T> SkipTable ( int pageSize, int pageIndex )
+        public virtual IList<T> SkipTable<T>(int pageSize, int pageIndex) where T : class
         {
             return ExecEntityJdData (ef =>
             {
@@ -46,7 +46,7 @@ namespace IOCPracticeDAL.IOCPracticeDAO
             });
         }
 
-        public virtual int GetCount ( Type t )
+        public virtual int GetCount<T>(Type t) where T : class
         {
             return ExecEntityJdData (ef =>
              {
@@ -63,7 +63,7 @@ namespace IOCPracticeDAL.IOCPracticeDAO
         /// <param name="pageSize"></param>
         /// <param name="pageIndex"></param>
         /// <returns></returns>
-        public virtual IEnumerable<T> SkipData<T> ( Type t, int pageSize, int pageIndex )
+        public virtual IEnumerable<T> SkipData<T>(Type t, int pageSize, int pageIndex) where T : class
         {
             return ExecEntityJdData (ef =>
              {
@@ -80,7 +80,7 @@ namespace IOCPracticeDAL.IOCPracticeDAO
         /// <param name="pageSize"></param>
         /// <param name="pageIndex"></param>
         /// <returns></returns>
-        public virtual IEnumerable<T> OffSetData<T> ( Type t, int pageSize, int pageIndex )
+        public virtual IEnumerable<T> OffSetData<T>(Type t, int pageSize, int pageIndex) where T : class
         {
             return ExecEntityJdData (ef =>
              {

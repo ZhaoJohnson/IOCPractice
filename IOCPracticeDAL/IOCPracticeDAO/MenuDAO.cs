@@ -7,7 +7,8 @@ using IOCPracticeDAL.Entity;
 
 namespace IOCPracticeDAL.IOCPracticeDAO
     {
-    public class MenuDAO : BasicDAO<Menu>
-        {
+    public class MenuDAO<T> : BasicDAO, IDAO
+        where T:Menu
+    {
         }
     }

@@ -7,7 +7,8 @@ using IOCPracticeDAL.Entity;
 
 namespace IOCPracticeDAL.IOCPracticeDAO
     {
-    public class UserMenuMappingDAO : BasicDAO<UserMenuMapping>
-        {
+    public class UserMenuMappingDAO<T> : BasicDAO, IDAO
+        where T:UserMenuMapping
+    {
         }
     }

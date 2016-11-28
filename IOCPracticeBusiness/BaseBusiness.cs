@@ -28,6 +28,8 @@ namespace IOCPracticeBusiness
             section.Configure (container, "DemonIOCPracticeDAOContainer");
             IUserDataEngine userEngine = container.Resolve<IUserDataEngine> ();
             var ww = userEngine.QuerySingle (2);
+            IOCService iservice=new IOCService();
+            iservice.Resolve<IUserDataEngine>();
             //IBasicDAO<UserModel> iBaseServie = container.Resolve<IBasicDAO<UserModel>> ();
             //var s = iBaseServie.SkipTable (1, 1);
         }

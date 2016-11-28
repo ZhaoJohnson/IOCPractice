@@ -7,7 +7,8 @@ using IOCPracticeDAL.Entity;
 
 namespace IOCPracticeDAL.IOCPracticeDAO
     {
-    public class CompanyDAO : BasicDAO<Company>
-        {
+    public class CompanyDAO<T> : BasicDAO, IDAO
+        where T:Company
+    {
         }
     }

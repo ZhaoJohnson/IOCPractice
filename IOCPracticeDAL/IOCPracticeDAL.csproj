@@ -52,7 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IDAO.cs" />
     <Compile Include="RetrunDataEngine\BaseDataEngine.cs" />
+    <Compile Include="RetrunDataEngine\CompanyDataEngine.cs" />
+    <Compile Include="RetrunDataEngine\MenuDataEngine.cs" />
     <Compile Include="RetrunDataEngine\UserDataEngine.cs" />
     <Compile Include="DbDAO.cs" />
     <Compile Include="Entity\Company.cs" />
@@ -66,6 +69,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entity\User.cs" />
     <Compile Include="Entity\UserMenuMapping.cs" />
+    <Compile Include="RetrunDataEngine\UserMenuMappingDataEngine.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -9,9 +9,9 @@ namespace IOCPracticeDAL.RetrunDataEngine
 {
     public class UserDataEngine : IUserDataEngine
     {
-        protected UserDAO UserDAO => new UserDAO ();
+        protected UserDAO<User> UserDAO => new UserDAO<User> ();
 
-        public UserModel Add ( UserModel model )
+        public  UserModel Add ( UserModel model )
         {
             var AddUser = new User ().SyncFromOtherObj (model);
             var result = UserDAO.Add (AddUser);
@@ -21,7 +21,7 @@ namespace IOCPracticeDAL.RetrunDataEngine
 
         public UserModel QuerySingle ( object objectKey )
         {
-            var result = UserDAO.QuerySingle (objectKey);
+            var result = UserDAO.QuerySingle<User>(objectKey);
             if (result == null) return null;
             return new UserModel ().SyncFromOtherObj (result);
         }

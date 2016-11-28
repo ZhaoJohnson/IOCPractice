@@ -9,8 +9,10 @@ using IOCPracticeModel;
 
 namespace IOCPracticeDAL.IOCPracticeDAO
 {
-    public class UserDAO : BasicDAO<User>
+    public class UserDAO<T> : BasicDAO, IDAO
+        where T:User
     {
         public DbSet<User> UserDb => base.dbContext.User;
+
     }
 }
