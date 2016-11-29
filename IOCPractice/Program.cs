@@ -20,15 +20,6 @@ namespace IOCPractice
         {
             try
             {
-                //IDataEngine<UserModel> cd = new UserDataEngine ();
-
-                //var ee = cd.OffSetData (1, 1);
-                // BaseDataEngine<CompanyModel> engine=new CompanyDataEngine<CompanyModel>();
-                // engine.Add<CompanyModel>(new CompanyModel());
-                //UserDataEngine uEngine = new UserDataEngine ();
-                //var re = uEngine.OffSetData (10, 1);
-                //  IBasicDAO<UserModel> udao = new UserDAO ();
-                //var e = udao.QuerySingle (1);
                 var con = IOCBusiness.star ();
                 IOCRegisterDAL dal = new IOCRegisterDAL (con);
                 var newuser = dal.userEngine.AddEntity (new UserModel
@@ -49,6 +40,8 @@ namespace IOCPractice
                     UserType = 3
                 });
                 dal.userEngine.QuerySingle (newuser.Id);
+                var partone = dal.userEngine.OffSetData (5, 1);
+                var company = dal.companyEngine.OffSetData (5, 1);
             }
             catch (Exception ex)
             {

@@ -8,22 +8,22 @@ using IOCPracticeDAL.Entity;
 
 namespace IOCPracticeDAL.IOCPracticeDAO
 {
-    public  class BasicDAO : DbDAO<IOCPracticeDB>, IDAO
-      
+    public class BasicDAO : DbDAO<IOCPracticeDB>, IDAO
+
     {
         protected IOCPracticeDB dbContext = new IOCPracticeDB ();
 
-        public virtual T Add<T>(T t) where T : class
+        public virtual T Add<T> ( T t ) where T : class
         {
             return ExecEntityJdData (ef => ef.Set<T> ().Add (t), true);
         }
 
-        public virtual T QuerySingle<T>(object objectKey) where T : class
+        public virtual T QuerySingle<T> ( object objectKey ) where T : class
         {
             return ExecEntityJdData (ef => ef.Set<T> ().Find (objectKey));
         }
 
-        public virtual T AddorUpdate<T>(T t) where T : class
+        public virtual T AddorUpdate<T> ( T t ) where T : class
         {
             return ExecEntityJdData (ef =>
              {
@@ -33,20 +33,20 @@ namespace IOCPracticeDAL.IOCPracticeDAO
         }
 
         /// <summary>
-        /// lambda分页
+        /// lambda分页  有待调整
         /// </summary>
         /// <param name="pageSize"></param>
         /// <param name="pageIndex"></param>
         /// <returns></returns>
-        public virtual IList<T> SkipTable<T>(int pageSize, int pageIndex) where T : class
+        public virtual IList<T> SkipTable<T> ( int pageSize, int pageIndex ) where T : class
         {
             return ExecEntityJdData (ef =>
             {
-                return ef.Set<T> ().Skip (( pageIndex - 1 ) * pageSize).Take (pageSize).ToList ();
+                return ef.Set<T> ().OrderBy (p => p).Skip (( pageIndex - 1 ) * pageSize).Take (pageSize).ToList ();
             });
         }
 
-        public virtual int GetCount<T>(Type t) where T : class
+        public virtual int GetCount<T> ( Type t ) where T : class
         {
             return ExecEntityJdData (ef =>
              {
@@ -63,7 +63,7 @@ namespace IOCPracticeDAL.IOCPracticeDAO
         /// <param name="pageSize"></param>
         /// <param name="pageIndex"></param>
         /// <returns></returns>
-        public virtual IEnumerable<T> SkipData<T>(Type t, int pageSize, int pageIndex) where T : class
+        public virtual IEnumerable<T> SkipData<T> ( Type t, int pageSize, int pageIndex ) where T : class
         {
             return ExecEntityJdData (ef =>
              {
@@ -80,11 +80,11 @@ namespace IOCPracticeDAL.IOCPracticeDAO
         /// <param name="pageSize"></param>
         /// <param name="pageIndex"></param>
         /// <returns></returns>
-        public virtual IEnumerable<T> OffSetData<T>(Type t, int pageSize, int pageIndex) where T : class
+        public virtual IEnumerable<T> OffSetData<T> ( Type t, int pageSize, int pageIndex ) where T : class
         {
             return ExecEntityJdData (ef =>
              {
-                 string strsql = string.Format ("SELECT * FROM {0} ORDER BY Id OFFSET ({1} -1) * {2} ROWS FETCH NEXT {2} ROWS ONLY; ;", t.Name, pageIndex, pageSize);
+                 string strsql = string.Format ("SELECT * FROM dbo.[{0}] ORDER BY Id OFFSET ({1} -1) * {2} ROWS FETCH NEXT {2} ROWS ONLY; ;", t.Name, pageIndex, pageSize);
                  return ef.Database.SqlQuery<T> (strsql, new object[] { null }).ToList ();
              });
         }

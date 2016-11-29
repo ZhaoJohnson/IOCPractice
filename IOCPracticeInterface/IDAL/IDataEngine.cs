@@ -16,6 +16,6 @@ namespace IOCPracticeInterface.IDAL
 
         T QuerySingle ( Object objectKey );
 
-        IList<T> SkipTable ( Int32 pageSize, Int32 pageIndex );
+        //IList<T> SkipTable ( Int32 pageSize, Int32 pageIndex );
     }
 }
