@@ -10,9 +10,12 @@ namespace IOCPracticeAop.Attribute
 {
     //public class UserHandlerAttribute : HandlerAttribute
     //{
+    //    public new int Order { get; set; }
+
     //    public override ICallHandler CreateHandler ( IUnityContainer container )
     //    {
-    //        return new UserHandler () { Order = this.Order };
+    //        ICallHandler handler=  new UserHandler () { Order = this.Order };
+    //        return handler;
     //    }
     //}
 }
