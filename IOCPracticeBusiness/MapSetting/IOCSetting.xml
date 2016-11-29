@@ -7,6 +7,9 @@
       <container name="DemonIOCPracticeDAOContainer">
         <register type="System.Data.Entity.DbContext, EntityFramework" mapTo="IOCPracticeDAL.Entity.IOCPracticeDB, IOCPracticeDAL" />
         <register type="IOCPracticeInterface.IDAL.IUserDataEngine`1,IOCPracticeInterface" mapTo="IOCPracticeDAL.RetrunDataEngine.UserDataEngine, IOCPracticeDAL" />
+        <register type="IOCPracticeInterface.IDAL.ICompanyDataEngine`1,IOCPracticeInterface" mapTo="IOCPracticeDAL.RetrunDataEngine.CompanyDataEngine, IOCPracticeDAL" />
+        <register type="IOCPracticeInterface.IDAL.IMenuDataEngine`1,IOCPracticeInterface" mapTo="IOCPracticeDAL.RetrunDataEngine.MenuDataEngine, IOCPracticeDAL" />
+        <register type="IOCPracticeInterface.IDAL.IUserMenuMappingDataEngine`1,IOCPracticeInterface" mapTo="IOCPracticeDAL.RetrunDataEngine.UserMenuMappingDataEngine, IOCPracticeDAL" />
       </container>
     </containers>
   </unity>

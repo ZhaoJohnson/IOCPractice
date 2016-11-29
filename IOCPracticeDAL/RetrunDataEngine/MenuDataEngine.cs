@@ -9,8 +9,8 @@ using IOCPracticeModel;
 
 namespace IOCPracticeDAL.RetrunDataEngine
 {
-    public class MenuDataEngine<TModel> : BasicDataEngine<TModel, Menu>, IMenuDataEngine<TModel>
-        where TModel : MenuModel, new()
+    public class MenuDataEngine : BasicDataEngine<MenuModel, Menu>, IMenuDataEngine<MenuModel>
+
     {
     }
 }

@@ -7,6 +7,7 @@ using IOCPracticeCommon.ObjectExtensions;
 using IOCPracticeDAL.Entity;
 using IOCPracticeDAL.IOCPracticeDAO;
 using IOCPracticeInterface;
+using IOCPracticeInterface.IDAL;
 using IOCPracticeModel;
 
 namespace IOCPracticeDAL.RetrunDataEngine

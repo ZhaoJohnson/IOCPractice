@@ -66,7 +66,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseBusiness.cs" />
+    <Compile Include="IOCBusiness.cs" />
+    <Compile Include="IOCRegisterDAL.cs" />
     <Compile Include="IOCService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

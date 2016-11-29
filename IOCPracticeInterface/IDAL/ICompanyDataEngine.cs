@@ -7,7 +7,8 @@ using IOCPracticeInterface;
 using IOCPracticeInterface.IDAL;
 using IOCPracticeModel;
 
-namespace IOCPracticeInterface
+namespace IOCPracticeInterface.IDAL
+
 {
     public interface ICompanyDataEngine<T> : IDataEngine<T>
         where T : CompanyModel

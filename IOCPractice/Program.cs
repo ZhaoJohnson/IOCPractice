@@ -29,8 +29,26 @@ namespace IOCPractice
                 //var re = uEngine.OffSetData (10, 1);
                 //  IBasicDAO<UserModel> udao = new UserDAO ();
                 //var e = udao.QuerySingle (1);
-                BaseBusiness bb = new BaseBusiness ();
-                bb.star ();
+                var con = IOCBusiness.star ();
+                IOCRegisterDAL dal = new IOCRegisterDAL (con);
+                var newuser = dal.userEngine.AddEntity (new UserModel
+                {
+                    Name = "test",
+                    Account = "123",
+                    CompanyId = 2,
+                    CompanyName = "testcompany",
+                    CreateTime = DateTime.Now,
+                    CreatorId = 1,
+                    Email = "test@126.com",
+                    LastLoginTime = DateTime.Now,
+                    LastModifierId = -1,
+                    LastModifyTime = DateTime.Now,
+                    Mobile = "13987654321",
+                    Password = "123456789",
+                    State = 1,
+                    UserType = 3
+                });
+                dal.userEngine.QuerySingle (newuser.Id);
             }
             catch (Exception ex)
             {
