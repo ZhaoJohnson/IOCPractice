@@ -30,8 +30,7 @@ namespace IOCPracticeDAL.RetrunDataEngine
         {
             var AddEntity = new TDbClass ().SyncFromOtherObj (tSource);
             var result = BaseDao.Add (AddEntity);
-            if (result == null) return null;
-            return new TSource ().SyncFromOtherObj (result);
+            return result == null ? null : new TSource ().SyncFromOtherObj (result);
         }
 
         public virtual TSource QuerySingle ( object objectKey )
@@ -41,36 +40,28 @@ namespace IOCPracticeDAL.RetrunDataEngine
             return new TSource ().SyncFromOtherObj (result);
         }
 
+        public TSource GetRandomData()
+        {
+            return new TSource().SyncFromOtherObj(BaseDao.GetRandomData<TDbClass>(typeof (TDbClass)));
+        }
+
         public virtual TSource AddorUpdate ( TSource model )
         {
             var AddEntity = new TDbClass ().SyncFromOtherObj (model);
             var result = BaseDao.AddorUpdate (AddEntity);
-            if (result == null) return null;
-            return new TSource ().SyncFromOtherObj (result);
+            return result == null ? null : new TSource ().SyncFromOtherObj (result);
         }
 
         public virtual IList<TSource> SkipTable ( int pageSize, int pageIndex )
         {
-            List<TSource> outResult = new List<TSource> ();
             var result = BaseDao.SkipTable<TDbClass> (pageSize, pageIndex);
-            if (!result.Any ()) return null;
-            foreach (var item in result)
-            {
-                outResult.Add (new TSource ().SyncFromOtherObj (item));
-            }
-            return outResult;
+            return !result.Any () ? null : result.Select(item => new TSource().SyncFromOtherObj(item)).ToList();
         }
 
         public virtual IEnumerable<TSource> OffSetData ( int pageSize, int pageIndex )
         {
-            List<TSource> outResult = new List<TSource> ();
             var result = BaseDao.OffSetData<TDbClass> (typeof (TDbClass), pageSize, pageIndex);
-            if (!result.Any ()) return null;
-            foreach (var item in result)
-            {
-                outResult.Add (new TSource ().SyncFromOtherObj (item));
-            }
-            return outResult;
+            return !result.Any () ? null : result.Select(item => new TSource().SyncFromOtherObj(item)).ToList();
         }
 
         public void Dispose ()

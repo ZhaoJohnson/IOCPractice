@@ -17,7 +17,7 @@ namespace IOCPracticeDAL
 
         T AddorUpdate<T>(T t) where T : class;
 
-
+        T GetRandomData<T>(Type t) where T : class;
         /// <summary>
         /// lambda分页
         /// </summary>

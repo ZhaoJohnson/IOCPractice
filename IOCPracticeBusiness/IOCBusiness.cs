@@ -15,6 +15,9 @@ using Microsoft.Practices.Unity.Configuration;
 
 namespace IOCPracticeBusiness
 {
+    /// <summary>
+    /// 实现IOC初始化
+    /// </summary>
     public static class IOCBusiness
     {
         public static IUnityContainer star ()

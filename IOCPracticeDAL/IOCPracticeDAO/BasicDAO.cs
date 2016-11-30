@@ -32,6 +32,15 @@ namespace IOCPracticeDAL.IOCPracticeDAO
              }, true);
         }
 
+        public T GetRandomData<T>(Type t) where T : class
+        {
+            return ExecEntityJdData(ef =>
+           {
+               string strsql = string.Format("select TOP 1 * from dbo.[{0}] ORDER BY NEWID()", t.Name);
+               return ef.Database.SqlQuery<T>(strsql, new object[] { null }).ToList().FirstOrDefault();
+           }, true);
+        }
+
         /// <summary>
         /// lambda分页  有待调整
         /// </summary>

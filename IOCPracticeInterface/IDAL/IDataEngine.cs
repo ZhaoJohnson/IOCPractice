@@ -16,6 +16,8 @@ namespace IOCPracticeInterface.IDAL
 
         T QuerySingle ( Object objectKey );
 
+        T GetRandomData();
+
         //IList<T> SkipTable ( Int32 pageSize, Int32 pageIndex );
     }
 }
