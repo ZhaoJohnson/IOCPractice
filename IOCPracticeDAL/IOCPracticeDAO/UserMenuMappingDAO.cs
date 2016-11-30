@@ -22,5 +22,7 @@ namespace IOCPracticeDAL.IOCPracticeDAO
         {
             return MappingDb.Where(p => p.MenuId == menuid);
         }
+
+        
     }
     }

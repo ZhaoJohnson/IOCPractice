@@ -19,6 +19,12 @@ namespace IOCPracticeDAL.IOCPracticeDAO
             return ExecEntityJdData (ef => ef.Set<T> ().Add (t), true);
         }
 
+       
+        public IList<T> GetData<T>() where T : class
+        {
+            return ExecEntityJdData(ef => ef.Set<T>().ToList());
+        }
+
         public virtual T QuerySingle<T> ( object objectKey ) where T : class
         {
             return ExecEntityJdData (ef => ef.Set<T> ().Find (objectKey));

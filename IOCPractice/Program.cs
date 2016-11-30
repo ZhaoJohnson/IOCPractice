@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using IOCPracticeBusiness;
 using IOCPracticeModel;
 
@@ -33,18 +34,29 @@ namespace IOCPractice
                 //d 找出某用户拥有的全部菜单列表
 
                 var testUser= dal.userEngine.GetRandomData();
-                
-                dal.userMenuEngine.QuerySingle()
 
+                var usermenu= dal.userMenuEngine.GetDataByUserId(testUser.Id);
                 //e 找出拥有某菜单的全部用户列表
+                var testmenu = dal.menuEngine.GetRandomData();
 
+                var menuuser= dal.userMenuEngine.GetDataByMenuId(testmenu.Id).Select(p=>p.UserId);
                 //e 根据菜单id找出全部子菜单的列表
-
+                var fatherMenu= dal.menuEngine.QuerySingle(3);
+                var allmenu = dal.menuEngine.GetMenuModelsByParentId(fatherMenu.Id);
                 //f 找出名字中包含"系统"的菜单列表
-
+                var syskeyword = dal.menuEngine.GetMenuModelsByMenuName("系统");
                 //g 物理删除某用户的时候，删除其全部的映射
-
+                var removeUser = dal.userEngine.GetRandomData();
+                if (dal.userMenuEngine.RemoveDataByUserId(removeUser.Id))
+                {
+                    dal.userEngine.RemoveUser(removeUser.Id);
+                }
                 //h 物理删除某菜单的时候，删除其全部的映射
+                var removeMenu = dal.menuEngine.GetRandomData();
+                if (dal.userMenuEngine.RemoveDataByMenuId(removeMenu.Id))
+                {
+                    dal.menuEngine.RemoveMenu(removeMenu.Id);
+                }
 
                 #endregion
 

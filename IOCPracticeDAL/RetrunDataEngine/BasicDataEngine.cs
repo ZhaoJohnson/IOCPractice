@@ -26,6 +26,11 @@ namespace IOCPracticeDAL.RetrunDataEngine
             KeyDaos.Add (typeof (UserMenuMappingModel).Name, new UserMenuMappingDAO<UserMenuMapping> ());
         }
 
+        public IList<TSource> GetData()
+        {
+            return BaseDao.GetData<TDbClass>().Select(single => new TSource().SyncFromOtherObj(single)).ToList();
+        }
+
         public virtual TSource AddEntity ( TSource tSource )
         {
             var AddEntity = new TDbClass ().SyncFromOtherObj (tSource);

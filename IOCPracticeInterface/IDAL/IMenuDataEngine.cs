@@ -10,5 +10,8 @@ namespace IOCPracticeInterface.IDAL
     public interface IMenuDataEngine<T> : IDataEngine<T>
         where T : MenuModel
     {
+        IList<MenuModel> GetMenuModelsByParentId(int parentId);
+        IList<MenuModel> GetMenuModelsByMenuName(string name);
+        bool RemoveMenu(int menuid);
     }
 }

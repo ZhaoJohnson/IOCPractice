@@ -12,5 +12,7 @@ namespace IOCPracticeInterface.IDAL
     {
         IList<UserMenuMappingModel> GetDataByUserId(int userid);
         IList<UserMenuMappingModel> GetDataByMenuId(int menuid);
+        bool RemoveDataByUserId(int userid);
+        bool RemoveDataByMenuId(int menuid);
     }
 }

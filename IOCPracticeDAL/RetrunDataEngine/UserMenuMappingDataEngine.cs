@@ -33,5 +33,17 @@ namespace IOCPracticeDAL.RetrunDataEngine
             }
             return resultList;
         }
+
+        public bool RemoveDataByUserId(int userid)
+        {
+            var usermenus = UserMenuMappingDAO.GetUserMenuMappingsByUserId(userid);
+            UserMenuMappingDAO.MappingDb.RemoveRange(usermenus);
+            return !UserMenuMappingDAO.GetUserMenuMappingsByUserId(userid).Any();
+        }
+
+        public bool RemoveDataByMenuId(int menuid)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
