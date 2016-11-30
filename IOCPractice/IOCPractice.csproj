@@ -105,6 +105,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="WorkScript\Advanced7第七次homework的学习总结.txt" />
     <Content Include="WorkScript\Advanced7第七次homework.txt" />
     <Content Include="WorkScript\company_user_menu_mapping.sql" />
   </ItemGroup>
