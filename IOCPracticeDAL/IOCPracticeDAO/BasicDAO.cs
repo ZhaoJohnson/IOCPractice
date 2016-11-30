@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using IOCPracticeDAL.Entity;
@@ -22,7 +23,7 @@ namespace IOCPracticeDAL.IOCPracticeDAO
         {
             return ExecEntityJdData (ef => ef.Set<T> ().Find (objectKey));
         }
-
+        
         public virtual T AddorUpdate<T> ( T t ) where T : class
         {
             return ExecEntityJdData (ef =>

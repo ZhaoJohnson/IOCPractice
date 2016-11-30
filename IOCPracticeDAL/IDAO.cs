@@ -14,7 +14,6 @@ namespace IOCPracticeDAL
 
         T QuerySingle<T>(object objectKey) where T : class;
 
-
         T AddorUpdate<T>(T t) where T : class;
 
         T GetRandomData<T>(Type t) where T : class;

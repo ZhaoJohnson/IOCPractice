@@ -24,9 +24,27 @@ namespace IOCPractice
                 }
                 //b.增菜单
                 createMenuModels(dal);
+
+                //c.绑定菜单
+                createUserMenumapping(dal);
                 #endregion
 
-                #region
+                #region 处理业务
+                //d 找出某用户拥有的全部菜单列表
+
+                var testUser= dal.userEngine.GetRandomData();
+                
+                dal.userMenuEngine.QuerySingle()
+
+                //e 找出拥有某菜单的全部用户列表
+
+                //e 根据菜单id找出全部子菜单的列表
+
+                //f 找出名字中包含"系统"的菜单列表
+
+                //g 物理删除某用户的时候，删除其全部的映射
+
+                //h 物理删除某菜单的时候，删除其全部的映射
 
                 #endregion
 
@@ -128,10 +146,18 @@ namespace IOCPractice
 
         static void createUserMenumapping(IOCRegisterDAL dal)
         {
-            UserMenuMappingModel m1 = new UserMenuMappingModel()
+            int t = 0;
+            while (true)
             {
-                //MenuId = 
-            };
+                UserMenuMappingModel m1 = new UserMenuMappingModel()
+                {
+                    MenuId = dal.menuEngine.GetRandomData().Id,
+                    UserId = dal.userEngine.GetRandomData().Id
+                };
+                dal.userMenuEngine.AddEntity(m1);
+                t++;
+            }
+            
         }
     }
 }
