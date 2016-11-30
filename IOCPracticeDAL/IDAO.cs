@@ -6,18 +6,15 @@ using System.Threading.Tasks;
 
 namespace IOCPracticeDAL
 {
-    public interface IDAO:IDisposable
+    public interface IDAO : IDisposable
     {
         T Add<T>(T t) where T : class;
-
-
-
+        IList<T> GetData<T>() where T : class;
         T QuerySingle<T>(object objectKey) where T : class;
-
 
         T AddorUpdate<T>(T t) where T : class;
 
-
+        T GetRandomData<T>(Type t) where T : class;
         /// <summary>
         /// lambda分页
         /// </summary>
@@ -51,6 +48,6 @@ namespace IOCPracticeDAL
         /// <returns></returns>
         IEnumerable<T> OffSetData<T>(Type t, int pageSize, int pageIndex) where T : class;
 
-       
+
     }
 }

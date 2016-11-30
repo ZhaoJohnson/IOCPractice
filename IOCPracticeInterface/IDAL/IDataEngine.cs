@@ -8,13 +8,16 @@ namespace IOCPracticeInterface.IDAL
 {
     public interface IDataEngine<T> : IDisposable
     {
-        T AddEntity ( T tSource );
+        IList<T> GetData();
+        T AddEntity(T tSource);
 
-        T AddorUpdate ( T model );
+        T AddorUpdate(T model);
 
-        IEnumerable<T> OffSetData ( Int32 pageSize, Int32 pageIndex );
+        IEnumerable<T> OffSetData(Int32 pageSize, Int32 pageIndex);
 
-        T QuerySingle ( Object objectKey );
+        T QuerySingle(Object objectKey);
+
+        T GetRandomData();
 
         //IList<T> SkipTable ( Int32 pageSize, Int32 pageIndex );
     }

@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace IOCPracticeBusiness
 {
+    /// <summary>
+    /// 并不知道可以怎么操作的一个封装方案
+    /// </summary>
     public class IOCService : IDisposable
     {
         public enum LifeTimeOptions

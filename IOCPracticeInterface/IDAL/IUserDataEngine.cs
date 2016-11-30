@@ -10,5 +10,6 @@ namespace IOCPracticeInterface.IDAL
     public interface IUserDataEngine<T> : IDataEngine<T>
         where T : UserModel
     {
+        bool RemoveUser(int userid);
     }
 }

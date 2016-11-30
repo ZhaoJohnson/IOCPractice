@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace IOCPracticeInterface.IDAL
 {
+    /// <summary>
+    /// 改为使用IDataEngine 出口方案
+    /// </summary>
     public interface IRetrunDataEngine
     {
         T Add<T>(T model) where T : class, new();
